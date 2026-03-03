@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar lugar | MoviPark</title>
+    <link rel="stylesheet" href="css/reservar.css">
+</head>
+<body>
+
+    <!-- Logo -->
+    <div class="logo-container">
+        <div class="circle">
+            <h1>MoviPark</h1>
+        </div>
+    </div>
+
+    <!-- Título -->
+    <h2 class="page-title">Reservar lugar</h2>
+
+    <!-- Buscador -->
+    <div class="buscador-container">
+        <input type="text" id="buscador" placeholder="Escribe el nombre del estacionamiento">
+        <button class="btn-primary" onclick="buscarLugar()">Buscar</button>
+    </div>
+
+    <!-- Mensaje de disponibilidad -->
+    <div id="disponibilidad" class="disponibilidad"></div>
+
+    <!-- Botón de reservar -->
+    <button id="btnReservar" class="btn-primary" onclick="alert('¡Lugar reservado!')" style="display:none;">
+        Reservar ahora
+    </button>
+
+    <script src="js/reservar.js"></script>
+</body>
+</html>
