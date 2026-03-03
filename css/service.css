@@ -6,49 +6,41 @@ body, html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
 /* Contenedor principal */
 .service-main {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    height: 100vh; /* Ocupa toda la pantalla */
 }
 
 /* Secciones clicables */
 .service-section {
+    flex: 1; /* Cada sección ocupa la mitad de la pantalla */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 50vh; /* Cada sección ocupa mitad de la pantalla */
     color: white;
-    text-decoration: none; /* Quita subrayado de enlaces */
-    transition: all 0.3s ease;
     cursor: pointer;
+    transition: all 0.3s ease;
     padding: 40px 20px;
 }
 
-/* Hover: levanta y agrega sombra */
+/* Hover */
 .service-section:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* Reservar lugar → azul rey → blanco */
+/* Gradientes */
 .service-section.reservar {
-    background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%); /* azul rey → blanco */
     color: #ffffff;
 }
 
-/* Autolavado → azul agua → blanco */
 .service-section.autolavado {
-    background: linear-gradient(to top, #38bdf8 0%, #ffffff 100%);
+    background: linear-gradient(to top, #38bdf8 0%, #ffffff 100%); /* azul agua → blanco */
     color: #0f172a;
 }
 
@@ -68,7 +60,6 @@ body {
     .service-section h2 {
         font-size: 1.5rem;
     }
-
     .service-section p {
         font-size: 1rem;
     }
