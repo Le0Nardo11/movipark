@@ -50,7 +50,7 @@ body, html {
 }
 
 .login-form input:focus {
-    border-color: #facc15;
+    border-color: #0b0b0b;
 }
 
 .btn-primary {
@@ -82,9 +82,9 @@ body, html {
     border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    border: 1px solid #facc15;
+    border: 1px solid #090909;
     background: transparent;
-    color: #facc15;
+    color: #090909;
 }
 
 .btn-secondary.google:hover {
@@ -96,7 +96,7 @@ body, html {
 .btn-secondary.apple:hover {
     background: #000;
     color: white;
-    border-color: #000;
+    border-color: #090909;
 }
 
 .register-text {
