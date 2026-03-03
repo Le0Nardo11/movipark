@@ -3,57 +3,55 @@
 class MoviParkLogo extends HTMLElement {
     constructor() {
         super();
-
-        // Shadow DOM: encapsula el logo y los estilos
         const shadow = this.attachShadow({ mode: 'open' });
-
-        // HTML + CSS del logo
         shadow.innerHTML = `
             <style>
                 .logo-container {
                     position: relative;
-                    text-align: center;
+                    width: 120px;       /* ancho del círculo */
+                    height: 120px;      /* alto del círculo */
+                    margin: 0 auto;
                 }
 
                 .circle {
-                    width: 120px;
-                    height: 120px;
+                    width: 100%;
+                    height: 100%;
                     background: #facc15;
                     border-radius: 50%;
-                    margin: 0 auto;
-                    position: relative;
-                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: visible;  /* permite que las letras sobresalgan */
                 }
 
                 .logo-text {
-                    font-size: 2.5rem;
+                    font-size: 3rem;      /* letras grandes */
                     color: #0f172a;
                     font-weight: bold;
-                    position: relative;
-                    top: -40px; /* sobresale del círculo */
-                    z-index: 2;
+                    margin: 0;
+                    text-align: center;
+                    white-space: nowrap;  /* evita que se divida en varias líneas */
                 }
 
-                /* Opcional: responsive */
+                /* Responsive */
                 @media (max-width: 480px) {
-                    .circle {
+                    .logo-container {
                         width: 90px;
                         height: 90px;
                     }
                     .logo-text {
                         font-size: 2rem;
-                        top: -30px;
                     }
                 }
             </style>
 
             <div class="logo-container">
-                <div class="circle"></div>
-                <h1 class="logo-text">MoviPark</h1>
+                <div class="circle">
+                    <h1 class="logo-text">MoviPark</h1>
+                </div>
             </div>
         `;
     }
 }
 
-// Registrar el componente
 customElements.define('movipark-logo', MoviParkLogo);
