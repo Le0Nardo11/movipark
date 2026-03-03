@@ -1,66 +1,30 @@
-/* Reset básico */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Contenedor principal */
-.service-main {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Ocupa toda la pantalla */
-}
-
-/* Secciones clicables */
-.service-section {
-    flex: 1; /* Cada sección ocupa la mitad de la pantalla */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
+/* Botones dentro de las secciones */
+.service-btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    padding: 40px 20px;
+    color: white;
 }
 
-/* Hover */
-.service-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+/* Botón en Reservar lugar → más claro para contraste */
+.service-section.reservar .service-btn {
+    background-color: #3b82f6; /* azul más claro que contraste con azul rey */
 }
 
-/* Gradientes */
-.service-section.reservar {
-    background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%); /* azul rey → blanco */
-    color: #ffffff;
+.service-section.reservar .service-btn:hover {
+    background-color: #2563eb; /* azul más intenso al pasar el mouse */
 }
 
-.service-section.autolavado {
-    background: linear-gradient(to top, #38bdf8 0%, #ffffff 100%); /* azul agua → blanco */
-    color: #0f172a;
+/* Botón en Autolavado → azul más oscuro */
+.service-section.autolavado .service-btn {
+    background-color: #0ea5e9; /* azul agua intenso */
 }
 
-/* Titulos y textos */
-.service-section h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-}
-
-.service-section p {
-    font-size: 1.1rem;
-    max-width: 500px;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-    .service-section h2 {
-        font-size: 1.5rem;
-    }
-    .service-section p {
-        font-size: 1rem;
-    }
+.service-section.autolavado .service-btn:hover {
+    background-color: #0284c7; /* azul más oscuro al hover */
 }
