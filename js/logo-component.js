@@ -1,5 +1,3 @@
-// logo-component.js
-
 class MoviParkLogo extends HTMLElement {
     constructor() {
         super();
@@ -8,8 +6,8 @@ class MoviParkLogo extends HTMLElement {
             <style>
                 .logo-container {
                     position: relative;
-                    width: 120px;       /* ancho del círculo */
-                    height: 120px;      /* alto del círculo */
+                    width: 120px;
+                    height: 120px;
                     margin: 0 auto;
                 }
 
@@ -21,16 +19,19 @@ class MoviParkLogo extends HTMLElement {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    overflow: visible;  /* permite que las letras sobresalgan */
+                    overflow: visible;
                 }
 
                 .logo-text {
-                    font-size: 3rem;      /* letras grandes */
-                    color: #0f172a;
+                    font-size: 4rem; /* letras grandes para sobresalir */
                     font-weight: bold;
+                    color: #0f172a;
                     margin: 0;
                     text-align: center;
-                    white-space: nowrap;  /* evita que se divida en varias líneas */
+                    white-space: nowrap;
+                    line-height: 1;
+                    /* permite que las letras sobresalgan visualmente */
+                    transform: translateX(0) translateY(0);
                 }
 
                 /* Responsive */
@@ -40,7 +41,7 @@ class MoviParkLogo extends HTMLElement {
                         height: 90px;
                     }
                     .logo-text {
-                        font-size: 2rem;
+                        font-size: 3rem;
                     }
                 }
             </style>
