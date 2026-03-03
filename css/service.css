@@ -8,24 +8,22 @@ body, html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.service-header {
+body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    background: #ffffff;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Contenedor principal */
 .service-main {
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 100px); /* Ajusta altura menos el header */
+    flex: 1;
 }
 
 /* Secciones */
 .service-section {
-    flex: 1;
+    flex: 1; /* Cada sección ocupa mitad de la pantalla */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,13 +33,13 @@ body, html {
     color: white;
 }
 
-/* Reservar lugar */
+/* Reservar lugar → azul rey → blanco */
 .service-section.reservar {
-    background: linear-gradient(to bottom, #0f172a 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%);
     color: #ffffff;
 }
 
-/* Autolavado */
+/* Autolavado → azul agua → blanco */
 .service-section.autolavado {
     background: linear-gradient(to top, #38bdf8 0%, #ffffff 100%);
     color: #0f172a;
