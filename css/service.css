@@ -21,9 +21,10 @@ body {
     flex: 1;
 }
 
+
 /* Secciones */
 .service-section {
-    flex: 1; /* Cada sección ocupa mitad de la pantalla */
+    height: 50vh; /* Cada sección ocupa mitad de la pantalla */
     display: flex;
     flex-direction: column;
     justify-content: center;
