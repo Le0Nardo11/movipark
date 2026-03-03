@@ -1,0 +1,33 @@
+/* index.css */
+
+/* Reset básico y centrado completo */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centra vertical */
+    align-items: center;     /* centra horizontal */
+    height: 100vh;           /* ocupa toda la pantalla */
+    text-align: center;
+}
+
+.splash-text {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #0f172a;
+    opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .splash-text {
+        font-size: 1.2rem;
+    }
+}
