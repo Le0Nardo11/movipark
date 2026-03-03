@@ -21,7 +21,6 @@ body {
     flex: 1;
 }
 
-
 /* Secciones */
 .service-section {
     height: 50vh; /* Cada sección ocupa mitad de la pantalla */
@@ -34,7 +33,7 @@ body {
     color: white;
 }
 
-/* Reservar lugar → azul rey → blanco */
+/* Reservar lugar → AZUL REY → blanco */
 .service-section.reservar {
     background: linear-gradient(to bottom, #1e40af 0%, #ffffff 100%);
     color: #ffffff;
