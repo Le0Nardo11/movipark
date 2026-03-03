@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceso | Movipark</title>
-    <link rel="stylesheet" href="styless.css">
+    <title>Acceso | MoviPark</title>
+    <!-- CSS base y login (ya incluye provider buttons) -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
+<body class="access">
 
-<div class="access-container">
+    <div class="container access-container">
 
-    <!-- LOGO -->
-    <div class="circle">
-        <h1>Movipark</h1>
+        <!-- LOGO -->
+        <div class="circle">
+            <h1>MoviPark</h1>
+        </div>
+
+        <!-- TÍTULO -->
+        <h2 class="access-title">Ingresa tu correo</h2>
+
+        <!-- EMAIL -->
+        <input 
+            type="email" 
+            class="access-input" 
+            placeholder="correo@ejemplo.com"
+            required
+        >
+
+        <!-- BOTÓN PRINCIPAL -->
+        <button class="btn-primary">
+            Listo
+        </button>
+
+        <p class="or-text">o</p>
+
+        <!-- BOTONES DE PROVEEDORES -->
+        <button class="provider-btn google">Continuar con Google</button>
+        <button class="provider-btn microsoft">Continuar con Microsoft</button>
+        <button class="provider-btn apple">Continuar con Apple</button>
+
     </div>
-
-    <!-- TÍTULO -->
-    <h2 class="access-title">Ingresa tu correo</h2>
-
-    <!-- EMAIL -->
-    <input 
-        type="email" 
-        class="access-input" 
-        placeholder="correo@ejemplo.com"
-        required
-    >
-
-    <button class="btn-primary">
-        Listo
-    </button>
-
-    <p class="or-text">o</p>
-
-    <!-- PROVEEDORES -->
-    <button class="provider-btn google">Continuar con Google</button>
-    <button class="provider-btn microsoft">Continuar con Microsoft</button>
-    <button class="provider-btn apple">Continuar con Apple</button>
-
-</div>
 
 </body>
 </html>

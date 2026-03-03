@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | Movipark</title>
-    <link rel="stylesheet" href="styless.css">
+    <title>Registro | MoviPark</title>
+    <!-- CSS base y login (registro incluido) -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
+<body class="register">
 
-<div class="register-container">
+    <div class="container register-container">
 
-    <!-- LOGO -->
-    <div class="circle">
-        <h1>Movipark</h1>
-    </div>
-
-    <!-- TÍTULO -->
-    <h2 class="register-title">Registro</h2>
-
-    <!-- FORMULARIO -->
-    <form class="register-form">
-
-        <label>Nombre</label>
-        <input type="text" placeholder="Ingresa tu nombre" required>
-
-        <label>Apellido</label>
-        <input type="text" placeholder="Ingresa tu apellido" required>
-
-        <!-- FILA DOBLE -->
-        <div class="row">
-
-            <div class="field">
-                <label>Edad</label>
-                <select required>
-                    <option value="">Selecciona</option>
-                    <!-- 15 a 40 -->
-                    <!-- Puedes cambiarlo luego -->
-                    <script>
-                        for (let i = 15; i <= 40; i++) {
-                            document.write(`<option value="${i}">${i}</option>`);
-                        }
-                    </script>
-                </select>
-            </div>
-
-            <div class="field">
-                <label>Sexo</label>
-                <select required>
-                    <option value="">Selecciona</option>
-                    <option>Masculino</option>
-                    <option>Femenino</option>
-                </select>
-            </div>
-
+        <!-- LOGO -->
+        <div class="circle">
+            <h1>MoviPark</h1>
         </div>
 
-        <label>Ocupación</label>
-        <input type="text" placeholder="Ingresa tu ocupación" required>
+        <!-- TÍTULO -->
+        <h2 class="register-title">Registro</h2>
 
-        <button type="submit" class="btn-primary">
-            Siguiente
-        </button>
+        <!-- FORMULARIO -->
+        <form class="form register-form">
 
-    </form>
+            <label>Nombre</label>
+            <input type="text" placeholder="Ingresa tu nombre" required>
 
-</div>
+            <label>Apellido</label>
+            <input type="text" placeholder="Ingresa tu apellido" required>
+
+            <!-- FILA DOBLE -->
+            <div class="row">
+
+                <div class="field">
+                    <label>Edad</label>
+                    <select required>
+                        <option value="">Selecciona</option>
+                        <!-- 15 a 40 -->
+                        <!-- Puedes cambiarlo luego -->
+                        <script>
+                            for (let i = 15; i <= 40; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Sexo</label>
+                    <select required>
+                        <option value="">Selecciona</option>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <label>Ocupación</label>
+            <input type="text" placeholder="Ingresa tu ocupación" required>
+
+            <button type="submit" class="btn-primary">
+                Siguiente
+            </button>
+
+        </form>
+
+    </div>
 
 </body>
 </html>

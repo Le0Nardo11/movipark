@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión | Movipark</title>
-    <link rel="stylesheet" href="styless.css">
+    <title>Iniciar sesión | MoviPark</title>
+    <!-- CSS base y específico de login -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
-<body>
+<body class="login">
 
-<div class="login-container">
+    <div class="container login-container">
 
-    <!-- LOGO -->
-    <div class="circle">
-        <h1>Movipark</h1>
-    </div>
+        <!-- LOGO -->
+        <div class="circle">
+            <h1>MoviPark</h1>
+        </div>
 
-    <!-- TÍTULO -->
-    <h2 class="login-title">Inicia sesión</h2>
+        <!-- TÍTULO -->
+        <h2 class="login-title">Inicia sesión</h2>
 
-    <!-- FORMULARIO -->
-    <form class="login-form">
+        <!-- FORMULARIO -->
+        <form class="form login-form">
 
-        <label>Email</label>
-        <input type="email" placeholder="Ingresa tu email" required>
+            <label>Email</label>
+            <input type="email" placeholder="Ingresa tu email" required>
 
-        <label>Contraseña</label>
-        <input type="password" placeholder="Ingresa tu contraseña" required>
+            <label>Contraseña</label>
+            <input type="password" placeholder="Ingresa tu contraseña" required>
 
-        <button type="submit" class="btn-primary">
-            Iniciar sesión
+            <button type="submit" class="btn-primary">
+                Iniciar sesión
+            </button>
+
+        </form>
+
+        <p class="or-text">o</p>
+
+        <button class="btn-secondary provider-btn google">
+            Ingresar con Google
         </button>
 
-    </form>
+        <button class="btn-secondary provider-btn microsoft">
+            Ingresar con Microsoft
+        </button>
 
-    <p class="or-text">o</p>
+        <button class="btn-secondary provider-btn apple">
+            Ingresar con Apple
+        </button>
 
-    <button class="btn-secondary">
-        Ingresar como invitado
-    </button>
+        <!-- REGISTRO -->
+        <p class="register-text">
+            ¿No tienes cuenta?
+            <a href="register.html">Registrarse</a>
+        </p>
 
-    <!-- REGISTRO -->
-    <p class="register-text">
-        ¿No tienes cuenta?
-        <a href="#">Registrarse</a>
-    </p>
-
-</div>
+    </div>
 
 </body>
 </html>

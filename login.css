@@ -1,0 +1,57 @@
+/* ==========================
+   CONTAINERS GENERALES
+========================== */
+.container {
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.container h1 {
+    margin: 25px 0 15px;
+    font-size: 1.6rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    opacity: 0.85;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BOTONES DE PROVEEDORES */
+.provider-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s;
+}
+
+.provider-btn.google { background: #ea4335; }
+.provider-btn.microsoft { background: #2563eb; }
+.provider-btn.apple { background: #000000; }
+
+.provider-btn.google:hover { background: #c5221f; }
+.provider-btn.microsoft:hover { background: #1a4ebf; }
+.provider-btn.apple:hover { background: #111111; }

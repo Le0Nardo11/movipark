@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | Movipark</title>
-    <link rel="stylesheet" href="styless.css">
+    <title>Inicio | MoviPark</title>
+    <!-- CSS base y específico de home -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/service.css"> <!-- Para tarjetas de servicios -->
 </head>
 <body class="home">
 
     <!-- HEADER -->
     <header class="home-header">
         <div class="circle logo-small">
-            <h1>Movipark</h1>
+            <h1>MoviPark</h1>
         </div>
     </header>
 
-    <!-- CONTENIDO -->
+    <!-- MAIN -->
     <main class="home-main">
 
-        <section class="home-section reservar">
-            <h2>Reservar lugar</h2>
+        <section class="home-section top">
+            <h1 style="text-align:center; padding: 20px; color:white;">Nuestros Servicios</h1>
+
+            <div class="services-container">
+                <div class="service-card reservar">
+                    <h2>Reservar lugar</h2>
+                    <p>Reserva tu lugar de estacionamiento rápidamente.</p>
+                </div>
+
+                <div class="service-card autolavado">
+                    <h2>Autolavado</h2>
+                    <p>Limpieza profesional de tu vehículo mientras estacionas.</p>
+                </div>
+
+                <div class="service-card lavado-premium">
+                    <h2>Lavado Premium</h2>
+                    <p>Servicio completo con productos de alta calidad.</p>
+                </div>
+
+                <div class="service-card mantenimiento">
+                    <h2>Mantenimiento</h2>
+                    <p>Revisión y mantenimiento básico de tu vehículo.</p>
+                </div>
+            </div>
         </section>
 
-        <section class="home-section autolavado">
-            <h2>Autolavado</h2>
+        <section class="home-section bottom">
+            <p style="text-align:center; padding:20px;">¡MoviPark, la mejor experiencia de estacionamiento!</p>
         </section>
 
     </main>
