@@ -80,6 +80,25 @@ body, html {
     transition: all 0.3s ease;
 }
 
+/* Horario */
+.horario-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.horario-container label {
+    font-weight: bold;
+}
+
+.horario-container input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+}
+
 /* Botón reservar */
 #btnReservar {
     padding: 12px 30px;
