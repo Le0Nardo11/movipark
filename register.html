@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | MoviPark</title>
+    <!-- Componente del logo -->
+    <script src="js/logo-component.js" defer></script>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <!-- Logo -->
+        <movipark-logo></movipark-logo>
+
+        <!-- Título -->
+        <h2 class="register-title">Registro</h2>
+
+        <!-- Formulario -->
+        <form class="register-form">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" placeholder="Ingresa tu apellido" required>
+
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" placeholder="Ingresa tu correo" required>
+
+            <!-- Fila doble: Edad y Sexo -->
+            <div class="row">
+                <div class="field">
+                    <label for="edad">Edad</label>
+                    <select id="edad" required>
+                        <option value="">Selecciona</option>
+                        <script>
+                            for (let i = 15; i <= 40; i++) {
+                                document.write(`<option value="${i}">${i}</option>`);
+                            }
+                        </script>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo" required>
+                        <option value="">Selecciona</option>
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="ocupacion">Ocupación</label>
+            <input type="text" id="ocupacion" placeholder="Ingresa tu ocupación" required>
+
+            <button type="submit" class="btn-primary">Finalizar</button>
+        </form>
+    </div>
+
+</body>
+</html>
