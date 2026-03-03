@@ -3,41 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro | MoviPark</title>
-    <!-- CSS base y login (registro incluido) -->
+    <title>Registro | Movipark</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body class="register">
 
-    <div class="container register-container">
+    <div class="register-container">
 
-        <!-- LOGO -->
         <div class="circle">
-            <h1>MoviPark</h1>
+            <h1>Movipark</h1>
         </div>
 
-        <!-- TÍTULO -->
         <h2 class="register-title">Registro</h2>
 
-        <!-- FORMULARIO -->
-        <form class="form register-form">
-
+        <form class="register-form">
             <label>Nombre</label>
             <input type="text" placeholder="Ingresa tu nombre" required>
-
             <label>Apellido</label>
             <input type="text" placeholder="Ingresa tu apellido" required>
 
-            <!-- FILA DOBLE -->
             <div class="row">
-
                 <div class="field">
                     <label>Edad</label>
                     <select required>
                         <option value="">Selecciona</option>
-                        <!-- 15 a 40 -->
-                        <!-- Puedes cambiarlo luego -->
                         <script>
                             for (let i = 15; i <= 40; i++) {
                                 document.write(`<option value="${i}">${i}</option>`);
@@ -54,16 +44,12 @@
                         <option>Femenino</option>
                     </select>
                 </div>
-
             </div>
 
             <label>Ocupación</label>
             <input type="text" placeholder="Ingresa tu ocupación" required>
 
-            <button type="submit" class="btn-primary">
-                Siguiente
-            </button>
-
+            <button type="submit" class="btn-primary">Siguiente</button>
         </form>
 
     </div>

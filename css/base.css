@@ -1,6 +1,4 @@
-/* ==========================
-   BASE / RESET / TIPOGRAFÍA
-========================== */
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -8,24 +6,21 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-html, body {
-    min-height: 100%;
-    width: 100%;
+body {
     background: white;
-    color: #07090e;
+    color: #0f172a;
 }
 
-/* ==========================
-   INPUTS Y SELECTS
-========================== */
+/* Inputs comunes */
 input, select {
     background: white;
     color: #0f172a;
     border: 1.5px solid #cbd5e1;
-    border-radius: 8px;
     outline: none;
     padding: 12px;
+    border-radius: 8px;
     font-size: 1rem;
+    margin-bottom: 15px;
 }
 
 input::placeholder {
@@ -36,18 +31,14 @@ input:focus, select:focus {
     border-color: #facc15;
 }
 
-/* ==========================
-   BOTONES GENERALES
-========================== */
+/* Botones generales */
 .btn-primary {
     padding: 12px;
     background: #facc15;
     color: #0f172a;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .btn-primary:hover {
@@ -60,11 +51,26 @@ input:focus, select:focus {
     border: 1px solid #facc15;
     color: #facc15;
     border-radius: 8px;
-    font-size: 0.95rem;
     cursor: pointer;
-    transition: background 0.3s;
 }
 
 .btn-secondary:hover {
-    background: rgba(7, 7, 7, 0.1);
+    background: rgba(7,7,7,0.1);
 }
+
+/* Provider buttons */
+.provider-btn {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    padding: 12px;
+}
+
+.provider-btn.google { background:#fff; color:#000; }
+.provider-btn.google:hover { background:#ea4335; color:#fff; }
+.provider-btn.microsoft { background:#fff; color:#000; }
+.provider-btn.microsoft:hover { background:#2563eb; color:#fff; }
+.provider-btn.apple { background:#fff; color:#000; }
+.provider-btn.apple:hover { background:#000; color:#fff; }
