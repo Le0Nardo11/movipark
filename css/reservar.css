@@ -1,0 +1,97 @@
+/* Reset básico */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1e40af; /* azul rey */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Logo */
+.logo-container .circle {
+    width: 120px;
+    height: 120px;
+    background-color: #facc15;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-container .circle h1 {
+    font-size: 2rem;
+    color: #0f172a;
+    text-align: center;
+}
+
+/* Título */
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Buscador */
+.buscador-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.buscador-container input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+}
+
+.buscador-container button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #2563eb;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.buscador-container button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Mensaje de disponibilidad */
+.disponibilidad {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Botón reservar */
+#btnReservar {
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #facc15;
+    color: #0f172a;
+    transition: all 0.3s ease;
+}
+
+#btnReservar:hover {
+    background-color: #eab308;
+}
