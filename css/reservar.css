@@ -1,178 +1,171 @@
-/* ==========================
-   RESET Y FONTS
-========================== */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #1e40af; /* Azul rey */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+body,html{
+height:100%;
+margin:0;
+padding:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#1e40af;
+color:white;
+display:flex;
+justify-content:center;
 }
 
-/* ==========================
-   LOGO
-========================== */
-.logo-container {
-    margin-top: 40px;
-    margin-bottom: 20px;
+.container{
+width:90%;
+max-width:420px;
+text-align:center;
+padding-top:40px;
 }
 
-.logo-container .circle {
-    width: 120px;
-    height: 120px;
-    background-color: #facc15;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* logo */
+
+.logo-container{
+margin-bottom:20px;
 }
 
-.logo-container .circle h1 {
-    font-size: 2rem;
-    color: #0f172a;
-    font-weight: bold;
+.circle{
+width:120px;
+height:120px;
+background:#facc15;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:auto;
 }
 
-/* ==========================
-   TÍTULO
-========================== */
-.page-title {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-align: center;
+.circle h1{
+color:#0f172a;
+font-size:2rem;
 }
 
-/* ==========================
-   BÚSQUEDAS RECIENTES
-========================== */
-.recientes-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+/* titulo */
+
+.page-title{
+font-size:2rem;
+margin-bottom:25px;
 }
 
-.recientes-container p {
-    margin-bottom: 10px;
-    font-weight: bold;
+/* recientes */
+
+.recientes-container{
+margin-bottom:30px;
 }
 
-.btn-reciente {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 8px 18px;
-    margin: 5px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+.recientes-container p{
+margin-bottom:12px;
+font-weight:bold;
 }
 
-.btn-reciente:hover {
-    background-color: #3b82f6;
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 8px rgba(0,0,0,0.3);
+.recientes-botones{
+display:flex;
+justify-content:center;
+gap:10px;
+flex-wrap:wrap;
 }
 
-/* ==========================
-   BUSCADOR
-========================== */
-.buscador-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+.btn-reciente{
+background:#2563eb;
+border:none;
+color:white;
+padding:8px 16px;
+border-radius:20px;
+cursor:pointer;
+transition:.2s;
 }
 
-#buscador {
-    padding: 10px 15px;
-    border-radius: 25px 0 0 25px;
-    border: none;
-    width: 200px;
-    font-size: 1rem;
-    outline: none;
+.btn-reciente:hover{
+background:#3b82f6;
+transform:translateY(-2px);
 }
 
-.buscador-container .btn-primary {
-    border-radius: 0 25px 25px 0;
+/* buscador */
+
+.buscador-container{
+display:flex;
+justify-content:center;
+margin-bottom:25px;
 }
 
-/* ==========================
-   DISPONIBILIDAD
-========================== */
-.disponibilidad {
-    margin: 15px 0;
-    padding: 12px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    text-align: center;
-    min-width: 250px;
+#buscador{
+padding:12px;
+border:none;
+border-radius:25px 0 0 25px;
+width:200px;
+outline:none;
 }
 
-/* ==========================
-   HORARIOS
-========================== */
-.horario-container {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+.btn-primary{
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:0 25px 25px 0;
+cursor:pointer;
 }
 
-.horario-container label {
-    font-weight: bold;
-    margin-right: 5px;
+.btn-primary:hover{
+background:#1d4ed8;
 }
 
-.horario-container input {
-    padding: 8px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+/* disponibilidad */
+
+.disponibilidad{
+margin:20px auto;
+padding:12px;
+border-radius:10px;
+width:80%;
+font-weight:bold;
 }
 
-/* ==========================
-   BOTÓN RESERVAR
-========================== */
-#btnReservar {
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    background-color: #16a34a;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+/* horarios */
+
+.horario-container{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-bottom:20px;
+flex-wrap:wrap;
 }
 
-#btnReservar:hover {
-    background-color: #15803d;
-    transform: translateY(-2px);
+.horario-box{
+display:flex;
+flex-direction:column;
 }
 
-/* ==========================
-   RESPONSIVE
-========================== */
-@media (max-width: 480px) {
-    .page-title {
-        font-size: 1.5rem;
-    }
+.horario-box input{
+padding:8px;
+border:none;
+border-radius:8px;
+}
 
-    #buscador {
-        width: 140px;
-    }
+/* reservar */
 
-    .btn-reciente {
-        padding: 6px 14px;
-        font-size: 0.9rem;
-    }
+.btn-reservar{
+background:#16a34a;
+border:none;
+padding:14px 30px;
+border-radius:25px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+transition:.2s;
+}
+
+.btn-reservar:hover{
+background:#15803d;
+transform:translateY(-2px);
+}
+
+/* responsive */
+
+@media(max-width:480px){
+
+#buscador{
+width:150px;
+}
+
+.page-title{
+font-size:1.6rem;
+}
+
 }

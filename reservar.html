@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservar lugar | MoviPark</title>
-    <link rel="stylesheet" href="css/reservar.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reservar lugar | MoviPark</title>
+<link rel="stylesheet" href="css/reservar.css">
 </head>
+
 <body>
+
+<div class="container">
 
     <!-- Logo -->
     <div class="logo-container">
@@ -16,103 +19,122 @@
     </div>
 
     <!-- Título -->
-    <h2 class="page-title">Reser lugar</h2>
+    <h2 class="page-title">Reservar lugar</h2>
 
     <!-- Búsquedas recientes -->
     <div class="recientes-container">
-        <p>Búsquedas recientes:</p>
-        <button class="btn-reciente" onclick="buscarLugarPred('Perisur')">Perisur</button>
-        <button class="btn-reciente" onclick="buscarLugarPred('Mitikah')">Mitikah</button>
-        <button class="btn-reciente" onclick="buscarLugarPred('Antara')">Antara</button>
+        <p>Búsquedas recientes</p>
+
+        <div class="recientes-botones">
+            <button class="btn-reciente" onclick="buscarLugarPred('Perisur')">Perisur</button>
+            <button class="btn-reciente" onclick="buscarLugarPred('Mitikah')">Mitikah</button>
+            <button class="btn-reciente" onclick="buscarLugarPred('Antara')">Antara</button>
+        </div>
     </div>
 
-    <!-- Buscador manual -->
+    <!-- Buscador -->
     <div class="buscador-container">
-        <input type="text" id="buscador" placeholder="Escribe el nombre del estacionamiento">
+        <input type="text" id="buscador" placeholder="Buscar estacionamiento">
         <button class="btn-primary" onclick="buscarLugar()">Buscar</button>
     </div>
 
-    <!-- Mensaje de disponibilidad -->
+    <!-- Disponibilidad -->
     <div id="disponibilidad" class="disponibilidad"></div>
 
-    <!-- Selección de horarios -->
+    <!-- Horarios -->
     <div id="horario-container" class="horario-container" style="display:none;">
-        <label for="horaLlegada">Hora de llegada:</label>
-        <input type="time" id="horaLlegada">
 
-        <label for="horaSalida">Hora de salida:</label>
-        <input type="time" id="horaSalida">
+        <div class="horario-box">
+            <label>Hora de llegada</label>
+            <input type="time" id="horaLlegada">
+        </div>
+
+        <div class="horario-box">
+            <label>Hora de salida</label>
+            <input type="time" id="horaSalida">
+        </div>
+
     </div>
 
-    <!-- Botón de reservar -->
-    <button id="btnReservar" class="btn-primary" style="display:none;">
+    <!-- Botón reservar -->
+    <button id="btnReservar" class="btn-reservar" style="display:none;">
         Reservar ahora
     </button>
 
-    <script>
-        function buscarLugar() {
-            const input = document.getElementById("buscador").value;
-            procesarDisponibilidad(input);
-        }
+</div>
 
-        function buscarLugarPred(nombre) {
-            // Coloca el valor en el input también
-            document.getElementById("buscador").value = nombre;
-            procesarDisponibilidad(nombre);
-        }
+<script>
 
-        function procesarDisponibilidad(estacionamiento) {
-            const mensaje = document.getElementById("disponibilidad");
-            const btnReservar = document.getElementById("btnReservar");
-            const horarioContainer = document.getElementById("horario-container");
+function buscarLugar(){
+    const input = document.getElementById("buscador").value
+    procesarDisponibilidad(input)
+}
 
-            if (!estacionamiento || estacionamiento.trim() === "") {
-                alert("Por favor ingresa un estacionamiento");
-                return;
-            }
+function buscarLugarPred(nombre){
+    document.getElementById("buscador").value = nombre
+    procesarDisponibilidad(nombre)
+}
 
-            // Disponibilidad aleatoria
-            const disponible = Math.random() < 0.7; // 70% disponible
+function procesarDisponibilidad(estacionamiento){
 
-            if (disponible) {
-                mensaje.textContent = `Lugar disponible en ${estacionamiento} ✅`;
-                mensaje.style.backgroundColor = "#16a34a"; // verde
-                horarioContainer.style.display = "flex"; // mostrar horarios
-                btnReservar.style.display = "inline-block"; // mostrar botón reservar
-            } else {
-                mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} ❌`;
-                mensaje.style.backgroundColor = "#dc2626"; // rojo
-                horarioContainer.style.display = "none";
-                btnReservar.style.display = "none";
-            }
-        }
+    const mensaje = document.getElementById("disponibilidad")
+    const btnReservar = document.getElementById("btnReservar")
+    const horarioContainer = document.getElementById("horario-container")
 
-        function reservar() {
-            const horaLlegada = document.getElementById("horaLlegada").value;
-            const horaSalida = document.getElementById("horaSalida").value;
+    if(estacionamiento.trim()===""){
+        alert("Ingresa un estacionamiento")
+        return
+    }
 
-            if (!horaLlegada || !horaSalida) {
-                alert("Por favor selecciona la hora de llegada y salida");
-                return;
-            }
+    const disponible = Math.random() < 0.7
 
-            const numEstacionamiento = Math.floor(Math.random() * 101); // 0 a 100
-            const estacionamiento = document.getElementById("buscador").value;
+    if(disponible){
 
-            alert(`¡Lugar reservado en ${estacionamiento}!\nNúmero de estacionamiento: ${numEstacionamiento}\nHora llegada: ${horaLlegada}\nHora salida: ${horaSalida}`);
+        mensaje.textContent = `Lugar disponible en ${estacionamiento} ✅`
+        mensaje.style.background = "#16a34a"
 
-            // Reiniciar campos
-            document.getElementById("buscador").value = "";
-            document.getElementById("horaLlegada").value = "";
-            document.getElementById("horaSalida").value = "";
-            document.getElementById("disponibilidad").textContent = "";
-            document.getElementById("horario-container").style.display = "none";
-            document.getElementById("btnReservar").style.display = "none";
-        }
+        horarioContainer.style.display = "flex"
+        btnReservar.style.display = "block"
 
-        // Asociar botón reservar
-        document.getElementById("btnReservar").addEventListener("click", reservar);
-    </script>
+    }else{
+
+        mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} ❌`
+        mensaje.style.background = "#dc2626"
+
+        horarioContainer.style.display = "none"
+        btnReservar.style.display = "none"
+
+    }
+
+}
+
+function reservar(){
+
+    const horaLlegada = document.getElementById("horaLlegada").value
+    const horaSalida = document.getElementById("horaSalida").value
+    const estacionamiento = document.getElementById("buscador").value
+
+    if(!horaLlegada || !horaSalida){
+        alert("Selecciona horario")
+        return
+    }
+
+    const numero = Math.floor(Math.random()*101)
+
+    alert(
+`Reserva confirmada
+
+Estacionamiento: ${estacionamiento}
+Cajón: ${numero}
+Llegada: ${horaLlegada}
+Salida: ${horaSalida}`
+    )
+
+}
+
+document.getElementById("btnReservar").addEventListener("click", reservar)
+
+</script>
 
 </body>
 </html>
