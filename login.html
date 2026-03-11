@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="css/menu.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión | MoviPark</title>
@@ -8,7 +9,17 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body class="login">
+<div id="menu-container"></div>
 
+<script>
+fetch("components/menu.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("menu-container").innerHTML = data
+})
+</script>
+
+<script src="js/menu.js"></script>
     <div class="login-container">
 
         <!-- Logo -->
