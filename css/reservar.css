@@ -260,47 +260,52 @@ border-radius:8px;
 font-weight:bold;
 text-align:center;
 }
+/* ===== MAPA DE ESTACIONAMIENTO ===== */
+
 .mapa{
 
 display:grid;
-grid-template-columns:repeat(5,60px);
-gap:10px;
+grid-template-columns:repeat(5,70px);
+gap:12px;
 justify-content:center;
-margin-top:20px;
+margin-top:25px;
 
 }
 
 .cajon{
 
-width:60px;
-height:60px;
+width:70px;
+height:70px;
 border-radius:8px;
+
 display:flex;
 align-items:center;
 justify-content:center;
+
 font-weight:bold;
+font-size:16px;
+
 cursor:pointer;
+transition:0.2s;
 
 }
 
+/* disponible */
 .disponible{
-
 background:#22c55e;
 color:white;
-
 }
 
+/* ocupado */
 .ocupado{
-
 background:#ef4444;
 color:white;
 cursor:not-allowed;
-
 }
 
+/* seleccionado */
 .seleccionado{
-
 background:#2563eb;
 color:white;
-
+transform:scale(1.1);
 }
