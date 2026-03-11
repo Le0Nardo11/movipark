@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="css/menu.css">
+
+<link rel="stylesheet" href="css/menu.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Reservar lugar | MoviPark</title>
+
 <link rel="stylesheet" href="css/reservar.css">
-<script src="js/reservar.js"></script>
+
 </head>
 
 <body>
+
 <div id="menu-container"></div>
 
 <script>
@@ -21,9 +25,9 @@ document.getElementById("menu-container").innerHTML = data
 </script>
 
 <script src="js/menu.js"></script>
+
 <div class="container">
 
-<!-- Logo -->
 <div class="logo-container">
 <div class="circle">
 <h1>MoviPark</h1>
@@ -32,7 +36,6 @@ document.getElementById("menu-container").innerHTML = data
 
 <h2 class="page-title">Reservar lugar</h2>
 
-<!-- Búsquedas recientes -->
 <div class="recientes-container">
 
 <p>Búsquedas recientes</p>
@@ -45,7 +48,6 @@ document.getElementById("menu-container").innerHTML = data
 
 </div>
 
-<!-- Buscador -->
 <div class="buscador-container">
 
 <input type="text" id="buscador" placeholder="Buscar estacionamiento">
@@ -54,106 +56,33 @@ document.getElementById("menu-container").innerHTML = data
 
 </div>
 
-<!-- Loader -->
-<div id="loader" class="loader" style="display:none;">
-⏳ Buscando disponibilidad...
-</div>
-
-<!-- Disponibilidad -->
 <div id="disponibilidad" class="disponibilidad"></div>
 
-<!-- Horarios -->
 <div id="horario-container" class="horario-container" style="display:none;">
 
 <div class="horario-box">
-<label>Llegada</label>
+<label>Hora de llegada</label>
 <input type="time" id="horaLlegada">
 </div>
 
 <div class="horario-box">
-<label>Salida</label>
+<label>Hora de salida</label>
 <input type="time" id="horaSalida">
 </div>
 
 </div>
 
-<!-- Botón reservar -->
+<h3 id="tituloMapa" style="display:none;">Selecciona tu cajón</h3>
+
+<div id="mapa-estacionamiento" class="mapa"></div>
+
 <button id="btnReservar" class="btn-reservar" style="display:none;">
 Reservar ahora
 </button>
 
 </div>
 
-<script>
-
-function buscarLugar(){
-const input = document.getElementById("buscador").value
-procesarDisponibilidad(input)
-}
-
-function buscarLugarPred(nombre){
-document.getElementById("buscador").value = nombre
-procesarDisponibilidad(nombre)
-}
-
-function procesarDisponibilidad(estacionamiento){
-
-const mensaje = document.getElementById("disponibilidad")
-const btnReservar = document.getElementById("btnReservar")
-const horarioContainer = document.getElementById("horario-container")
-
-if(estacionamiento.trim()===""){
-alert("Ingresa un estacionamiento")
-return
-}
-
-const disponible = Math.random() < 0.7
-
-if(disponible){
-
-mensaje.textContent = `Lugar disponible en ${estacionamiento} `
-mensaje.style.background = "#16a34a"
-
-horarioContainer.style.display = "flex"
-btnReservar.style.display = "block"
-
-}else{
-
-mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} `
-mensaje.style.background = "#dc2626"
-
-horarioContainer.style.display = "none"
-btnReservar.style.display = "none"
-
-}
-
-}
-
-function reservar(){
-
-const horaLlegada = document.getElementById("horaLlegada").value
-const horaSalida = document.getElementById("horaSalida").value
-const estacionamiento = document.getElementById("buscador").value
-
-if(!horaLlegada || !horaSalida){
-alert("Selecciona horario")
-return
-}
-
-const numero = Math.floor(Math.random()*101)
-
-localStorage.setItem("estacionamiento", estacionamiento)
-localStorage.setItem("cajon", numero)
-localStorage.setItem("llegada", horaLlegada)
-localStorage.setItem("salida", horaSalida)
-
-window.location.href = "pago.html"
-
-}
-
-document.getElementById("btnReservar").addEventListener("click", reservar)
-
-</script>
+<script src="js/reservar.js"></script>
 
 </body>
 </html>
