@@ -25,23 +25,25 @@ function buscarLugar() {
     }
 }
 
-function reservar() {
-    const horaLlegada = document.getElementById("horaLlegada").value;
-    const horaSalida = document.getElementById("horaSalida").value;
+function reservar(){
 
-    if (!horaLlegada || !horaSalida) {
-        alert("Por favor selecciona la hora de llegada y salida");
-        return;
+    const horaLlegada = document.getElementById("horaLlegada").value
+    const horaSalida = document.getElementById("horaSalida").value
+    const estacionamiento = document.getElementById("buscador").value
+
+    if(!horaLlegada || !horaSalida){
+        alert("Selecciona horario")
+        return
     }
 
-    const numEstacionamiento = Math.floor(Math.random() * 101); // 0 a 100
-    alert(`¡Lugar reservado!\nNúmero de estacionamiento: ${numEstacionamiento}\nHora llegada: ${horaLlegada}\nHora salida: ${horaSalida}`);
+    const numero = Math.floor(Math.random()*101)
 
-    // Reiniciar campos
-    document.getElementById("buscador").value = "";
-    document.getElementById("horaLlegada").value = "";
-    document.getElementById("horaSalida").value = "";
-    document.getElementById("disponibilidad").textContent = "";
-    document.getElementById("horario-container").style.display = "none";
-    document.getElementById("btnReservar").style.display = "none";
+    // Guardar datos para usarlos en la página de pago
+    localStorage.setItem("estacionamiento", estacionamiento)
+    localStorage.setItem("cajon", numero)
+    localStorage.setItem("llegada", horaLlegada)
+    localStorage.setItem("salida", horaSalida)
+
+    // Ir a página de pago
+    window.location.href = "pago.html"
 }
