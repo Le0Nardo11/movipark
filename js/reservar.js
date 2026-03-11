@@ -11,11 +11,12 @@ function buscarLugar() {
         return;
     }
 
-    // Mostrar loader
+    // mostrar loader
     loader.style.display = "block";
     mensaje.style.display = "none";
+    horarioContainer.style.display = "none";
+    btnReservar.style.display = "none";
 
-    // Simular búsqueda (1 segundo)
     setTimeout(() => {
 
         loader.style.display = "none";
@@ -27,12 +28,10 @@ function buscarLugar() {
             mensaje.textContent = "Lugar disponible ✅";
             mensaje.style.backgroundColor = "#16a34a";
             horarioContainer.style.display = "flex";
-            btnReservar.style.display = "inline-block";
+            btnReservar.style.display = "block";
         } else {
             mensaje.textContent = "Estacionamiento lleno ❌";
             mensaje.style.backgroundColor = "#dc2626";
-            horarioContainer.style.display = "none";
-            btnReservar.style.display = "none";
         }
 
     }, 1000);

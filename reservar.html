@@ -53,11 +53,13 @@ document.getElementById("menu-container").innerHTML = data
 
 </div>
 
-<!-- Disponibilidad -->
-<div id="disponibilidad" class="disponibilidad"></div>
+<!-- Loader -->
 <div id="loader" class="loader" style="display:none;">
 ⏳ Buscando disponibilidad...
 </div>
+
+<!-- Disponibilidad -->
+<div id="disponibilidad" class="disponibilidad"></div>
 
 <!-- Horarios -->
 <div id="horario-container" class="horario-container" style="display:none;">
@@ -108,7 +110,7 @@ const disponible = Math.random() < 0.7
 
 if(disponible){
 
-mensaje.textContent = `Lugar disponible en ${estacionamiento} ✅`
+mensaje.textContent = `Lugar disponible en ${estacionamiento} `
 mensaje.style.background = "#16a34a"
 
 horarioContainer.style.display = "flex"
@@ -116,7 +118,7 @@ btnReservar.style.display = "block"
 
 }else{
 
-mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} ❌`
+mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} `
 mensaje.style.background = "#dc2626"
 
 horarioContainer.style.display = "none"
