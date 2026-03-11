@@ -11,124 +11,126 @@
 
 <div class="container">
 
-    <!-- Logo -->
-    <div class="logo-container">
-        <div class="circle">
-            <h1>MoviPark</h1>
-        </div>
-    </div>
+<!-- Logo -->
+<div class="logo-container">
+<div class="circle">
+<h1>MoviPark</h1>
+</div>
+</div>
 
-    <!-- Título -->
-    <h2 class="page-title">Reservar lugar</h2>
+<h2 class="page-title">Reservar lugar</h2>
 
-    <!-- Búsquedas recientes -->
-    <div class="recientes-container">
-        <p>Búsquedas </p>
+<!-- Búsquedas recientes -->
+<div class="recientes-container">
 
-        <div class="recientes-botones">
-            <button class="btn-reciente" onclick="buscarLugarPred('Perisur')">Perisur</button>
-            <button class="btn-reciente" onclick="buscarLugarPred('Mitikah')">Mitikah</button>
-            <button class="btn-reciente" onclick="buscarLugarPred('Antara')">Antara</button>
-        </div>
-    </div>
+<p>Búsquedas recientes</p>
 
-    <!-- Buscador -->
-    <div class="buscador-container">
-        <input type="text" id="buscador" placeholder="Buscar estacionamiento">
-        <button class="btn-primary" onclick="buscarLugar()">Buscar</button>
-    </div>
+<div class="recientes-botones">
+<button class="btn-reciente" onclick="buscarLugarPred('Perisur')">Perisur</button>
+<button class="btn-reciente" onclick="buscarLugarPred('Mitikah')">Mitikah</button>
+<button class="btn-reciente" onclick="buscarLugarPred('Antara')">Antara</button>
+</div>
 
-    <!-- Disponibilidad -->
-    <div id="disponibilidad" class="disponibilidad"></div>
+</div>
 
-    <!-- Horarios -->
-    <div id="horario-container" class="horario-container" style="display:none;">
+<!-- Buscador -->
+<div class="buscador-container">
 
-        <div class="horario-box">
-            <label>Hora de llegada</label>
-            <input type="time" id="horaLlegada">
-        </div>
+<input type="text" id="buscador" placeholder="Buscar estacionamiento">
 
-        <div class="horario-box">
-            <label>Hora de salida</label>
-            <input type="time" id="horaSalida">
-        </div>
+<button class="btn-primary" onclick="buscarLugar()">Buscar</button>
 
-    </div>
+</div>
 
-    <!-- Botón reservar -->
-    <button id="btnReservar" class="btn-reservar" style="display:none;">
-        Reservar ahora
-    </button>
+<!-- Disponibilidad -->
+<div id="disponibilidad" class="disponibilidad"></div>
+
+<!-- Horarios -->
+<div id="horario-container" class="horario-container" style="display:none;">
+
+<div class="horario-box">
+<label>Hora de llegada</label>
+<input type="time" id="horaLlegada">
+</div>
+
+<div class="horario-box">
+<label>Hora de salida</label>
+<input type="time" id="horaSalida">
+</div>
+
+</div>
+
+<!-- Botón reservar -->
+<button id="btnReservar" class="btn-reservar" style="display:none;">
+Reservar ahora
+</button>
 
 </div>
 
 <script>
 
 function buscarLugar(){
-    const input = document.getElementById("buscador").value
-    procesarDisponibilidad(input)
+const input = document.getElementById("buscador").value
+procesarDisponibilidad(input)
 }
 
 function buscarLugarPred(nombre){
-    document.getElementById("buscador").value = nombre
-    procesarDisponibilidad(nombre)
+document.getElementById("buscador").value = nombre
+procesarDisponibilidad(nombre)
 }
 
 function procesarDisponibilidad(estacionamiento){
 
-    const mensaje = document.getElementById("disponibilidad")
-    const btnReservar = document.getElementById("btnReservar")
-    const horarioContainer = document.getElementById("horario-container")
+const mensaje = document.getElementById("disponibilidad")
+const btnReservar = document.getElementById("btnReservar")
+const horarioContainer = document.getElementById("horario-container")
 
-    if(estacionamiento.trim()===""){
-        alert("Ingresa un estacionamiento")
-        return
-    }
+if(estacionamiento.trim()===""){
+alert("Ingresa un estacionamiento")
+return
+}
 
-    const disponible = Math.random() < 0.7
+const disponible = Math.random() < 0.7
 
-    if(disponible){
+if(disponible){
 
-        mensaje.textContent = `Lugar disponible en ${estacionamiento} ✅`
-        mensaje.style.background = "#16a34a"
+mensaje.textContent = `Lugar disponible en ${estacionamiento} ✅`
+mensaje.style.background = "#16a34a"
 
-        horarioContainer.style.display = "flex"
-        btnReservar.style.display = "block"
+horarioContainer.style.display = "flex"
+btnReservar.style.display = "block"
 
-    }else{
+}else{
 
-        mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} ❌`
-        mensaje.style.background = "#dc2626"
+mensaje.textContent = `Estacionamiento lleno en ${estacionamiento} ❌`
+mensaje.style.background = "#dc2626"
 
-        horarioContainer.style.display = "none"
-        btnReservar.style.display = "none"
+horarioContainer.style.display = "none"
+btnReservar.style.display = "none"
 
-    }
+}
 
 }
 
 function reservar(){
 
-    const horaLlegada = document.getElementById("horaLlegada").value
-    const horaSalida = document.getElementById("horaSalida").value
-    const estacionamiento = document.getElementById("buscador").value
+const horaLlegada = document.getElementById("horaLlegada").value
+const horaSalida = document.getElementById("horaSalida").value
+const estacionamiento = document.getElementById("buscador").value
 
-    if(!horaLlegada || !horaSalida){
-        alert("Selecciona horario")
-        return
-    }
+if(!horaLlegada || !horaSalida){
+alert("Selecciona horario")
+return
+}
 
-    const numero = Math.floor(Math.random()*101)
+const numero = Math.floor(Math.random()*101)
 
-    alert(
-`Reserva confirmada
+localStorage.setItem("estacionamiento", estacionamiento)
+localStorage.setItem("cajon", numero)
+localStorage.setItem("llegada", horaLlegada)
+localStorage.setItem("salida", horaSalida)
 
-Estacionamiento: ${estacionamiento}
-Cajón: ${numero}
-Llegada: ${horaLlegada}
-Salida: ${horaSalida}`
-    )
+window.location.href = "pago.html"
 
 }
 
