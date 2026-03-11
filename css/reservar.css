@@ -1,178 +1,202 @@
 /* ==========================
-   RESET Y FONTS
+   RESET
 ========================== */
 body, html {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #1e40af; /* Azul rey */
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fondo azul rey con degradado */
+body{
+    background: linear-gradient(180deg,#1e40af,#3b82f6);
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+}
+
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+
+.main-container{
+    width:100%;
+    max-width:420px;
+    padding:40px 25px 60px 25px;
+    text-align:center;
 }
 
 /* ==========================
    LOGO
 ========================== */
-.logo-container {
-    margin-top: 40px;
-    margin-bottom: 20px;
+
+.logo-container{
+    margin-bottom:30px;
 }
 
-.logo-container .circle {
-    width: 120px;
-    height: 120px;
-    background-color: #facc15;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.circle{
+    width:120px;
+    height:120px;
+    background:#facc15;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.logo-container .circle h1 {
-    font-size: 2rem;
-    color: #0f172a;
-    font-weight: bold;
-}
-
-/* ==========================
-   TÍTULO
-========================== */
-.page-title {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
-    text-align: center;
+.circle h1{
+    font-size:2rem;
+    color:#0f172a;
 }
 
 /* ==========================
-   BÚSQUEDAS RECIENTES
+   TITULO
 ========================== */
-.recientes-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+
+.page-title{
+    font-size:1.9rem;
+    font-weight:bold;
+    margin-bottom:35px;
+    color:white;
 }
 
-.recientes-container p {
-    margin-bottom: 10px;
-    font-weight: bold;
+/* ==========================
+   BUSQUEDAS RECIENTES
+========================== */
+
+.recientes-container{
+    margin-bottom:35px;
 }
 
-.btn-reciente {
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 8px 18px;
-    margin: 5px;
-    border-radius: 25px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+.recientes-container p{
+    margin-bottom:15px;
+    font-weight:bold;
+    opacity:0.9;
 }
 
-.btn-reciente:hover {
-    background-color: #3b82f6;
-    transform: translateY(-2px);
-    box-shadow: 0px 6px 8px rgba(0,0,0,0.3);
+.recientes-container button{
+    margin:6px;
+}
+
+/* Botones tipo app */
+.btn-reciente{
+    border:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.25s;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-reciente:hover{
+    transform:translateY(-2px);
+    background:#3b82f6;
 }
 
 /* ==========================
    BUSCADOR
 ========================== */
-.buscador-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+
+.buscador-container{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
 }
 
-#buscador {
-    padding: 10px 15px;
-    border-radius: 25px 0 0 25px;
-    border: none;
-    width: 200px;
-    font-size: 1rem;
-    outline: none;
+#buscador{
+    padding:12px 16px;
+    border:none;
+    border-radius:25px 0 0 25px;
+    width:220px;
+    font-size:1rem;
 }
 
-.buscador-container .btn-primary {
-    border-radius: 0 25px 25px 0;
+.btn-primary{
+    border:none;
+    padding:12px 18px;
+    background:#2563eb;
+    color:white;
+    font-weight:bold;
+    border-radius:0 25px 25px 0;
+    cursor:pointer;
+}
+
+.btn-primary:hover{
+    background:#1d4ed8;
 }
 
 /* ==========================
    DISPONIBILIDAD
 ========================== */
-.disponibilidad {
-    margin: 15px 0;
-    padding: 12px 20px;
-    border-radius: 12px;
-    font-weight: bold;
-    text-align: center;
-    min-width: 250px;
+
+.disponibilidad{
+    margin:25px auto;
+    padding:14px;
+    border-radius:12px;
+    font-weight:bold;
+    width:80%;
 }
 
 /* ==========================
    HORARIOS
 ========================== */
-.horario-container {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    flex-wrap: wrap;
+
+.horario-container{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-bottom:25px;
 }
 
-.horario-container label {
-    font-weight: bold;
-    margin-right: 5px;
+.horario-container label{
+    font-weight:bold;
 }
 
-.horario-container input {
-    padding: 8px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+.horario-container input{
+    padding:10px;
+    border-radius:10px;
+    border:none;
 }
 
 /* ==========================
-   BOTÓN RESERVAR
+   BOTON RESERVAR
 ========================== */
-#btnReservar {
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    background-color: #16a34a;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+
+#btnReservar{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:1.1rem;
+    background:#22c55e;
+    color:white;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(0,0,0,0.3);
 }
 
-#btnReservar:hover {
-    background-color: #15803d;
-    transform: translateY(-2px);
+#btnReservar:hover{
+    background:#16a34a;
+    transform:translateY(-2px);
 }
 
 /* ==========================
    RESPONSIVE
 ========================== */
-@media (max-width: 480px) {
-    .page-title {
-        font-size: 1.5rem;
+
+@media(max-width:480px){
+
+    .main-container{
+        padding:30px 20px;
     }
 
-    #buscador {
-        width: 140px;
+    #buscador{
+        width:160px;
     }
 
-    .btn-reciente {
-        padding: 6px 14px;
-        font-size: 0.9rem;
-    }
 }
