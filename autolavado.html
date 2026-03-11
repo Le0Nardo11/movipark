@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autolavado | MoviPark</title>
+<link rel="stylesheet" href="css/autolavado.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Logo -->
+<div class="logo-container">
+<div class="circle">
+<h1>MoviPark</h1>
+</div>
+</div>
+
+<h2 class="titulo">Autolavado</h2>
+
+<!-- Tarjetas de servicio -->
+
+<div class="servicios">
+
+<div class="card-servicio" onclick="seleccionarServicio(this,'Lavado básico',50)">
+<h3>🚗 Lavado básico</h3>
+<p>Lavado exterior rápido</p>
+<span>$50 MXN</span>
+</div>
+
+<div class="card-servicio" onclick="seleccionarServicio(this,'Lavado premium',80)">
+<h3>✨ Lavado premium</h3>
+<p>Exterior + aspirado interior</p>
+<span>$80 MXN</span>
+</div>
+
+<div class="card-servicio" onclick="seleccionarServicio(this,'Detallado completo',150)">
+<h3>💎 Detallado completo</h3>
+<p>Limpieza profunda interior y exterior</p>
+<span>$150 MXN</span>
+</div>
+
+</div>
+
+<!-- Hora -->
+
+<div class="horario">
+
+<label>Selecciona hora del servicio</label>
+
+<input type="time" id="horaLavado">
+
+</div>
+
+<!-- Botón -->
+
+<button class="btn-reservar" onclick="reservarLavado()">
+Reservar lavado
+</button>
+
+</div>
+
+<script>
+
+let servicioSeleccionado=""
+let precioServicio=0
+
+function seleccionarServicio(elemento,nombre,precio){
+
+document.querySelectorAll(".card-servicio").forEach(card=>{
+card.classList.remove("seleccionado")
+})
+
+elemento.classList.add("seleccionado")
+
+servicioSeleccionado=nombre
+precioServicio=precio
+
+}
+
+function reservarLavado(){
+
+const hora=document.getElementById("horaLavado").value
+
+if(servicioSeleccionado===""){
+alert("Selecciona un servicio")
+return
+}
+
+if(!hora){
+alert("Selecciona una hora")
+return
+}
+
+localStorage.setItem("servicioLavado",servicioSeleccionado)
+localStorage.setItem("precioLavado",precioServicio)
+localStorage.setItem("horaLavado",hora)
+
+window.location.href="pago_lavado.html"
+
+}
+
+</script>
+
+</body>
+</html>

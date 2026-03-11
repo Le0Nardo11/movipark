@@ -1,0 +1,128 @@
+body{
+margin:0;
+font-family:Arial;
+background:#1e40af;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.container{
+width:340px;
+text-align:center;
+}
+
+/* LOGO */
+
+.logo-container{
+margin-bottom:20px;
+}
+
+.circle{
+width:100px;
+height:100px;
+background:#facc15;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin:auto;
+color:#0f172a;
+font-weight:bold;
+font-size:1.2rem;
+box-shadow:0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* TITULO */
+
+.titulo{
+margin-bottom:25px;
+}
+
+/* TARJETAS */
+
+.servicios{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-bottom:25px;
+}
+
+.card-servicio{
+background:white;
+color:black;
+padding:18px;
+border-radius:12px;
+text-align:left;
+cursor:pointer;
+transition:0.25s;
+box-shadow:0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-servicio h3{
+margin:0;
+font-size:1.1rem;
+}
+
+.card-servicio p{
+margin:5px 0 10px 0;
+font-size:0.9rem;
+color:#555;
+}
+
+.card-servicio span{
+font-weight:bold;
+color:#16a34a;
+}
+
+.card-servicio:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* TARJETA SELECCIONADA */
+
+.seleccionado{
+border:3px solid #16a34a;
+}
+
+/* HORARIO */
+
+.horario{
+margin-bottom:20px;
+text-align:left;
+}
+
+.horario label{
+font-weight:bold;
+}
+
+input{
+margin-top:8px;
+padding:10px;
+border-radius:8px;
+border:none;
+width:100%;
+}
+
+/* BOTON */
+
+.btn-reservar{
+background:#16a34a;
+border:none;
+padding:14px;
+width:100%;
+border-radius:12px;
+color:white;
+font-weight:bold;
+cursor:pointer;
+font-size:1rem;
+box-shadow:0 4px 8px rgba(0,0,0,0.25);
+}
+
+.btn-reservar:hover{
+background:#15803d;
+transform:translateY(-2px);
+}
