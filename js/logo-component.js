@@ -14,7 +14,7 @@ class MoviParkLogo extends HTMLElement {
                 .circle {
                     width: 100%;
                     height: 100%;
-                    background: #e3d541;
+                    background: #facc15;
                     border-radius: 50%;
                     display: flex;
                     justify-content: center;

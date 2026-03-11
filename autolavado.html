@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<link rel="stylesheet" href="css/menu.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Autolavado | MoviPark</title>
@@ -8,7 +9,17 @@
 </head>
 
 <body>
+<div id="menu-container"></div>
 
+<script>
+fetch("components/menu.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("menu-container").innerHTML = data
+})
+</script>
+
+<script src="js/menu.js"></script>
 <div class="container">
 
 <!-- Logo -->
@@ -25,19 +36,19 @@
 <div class="servicios">
 
 <div class="card-servicio" onclick="seleccionarServicio(this,'Lavado básico',50)">
-<h3>🚗 Lavado básico</h3>
+<h3>Lavado básico</h3>
 <p>Lavado exterior rápido</p>
 <span>$50 MXN</span>
 </div>
 
 <div class="card-servicio" onclick="seleccionarServicio(this,'Lavado premium',80)">
-<h3>✨ Lavado premium</h3>
+<h3>Lavado premium</h3>
 <p>Exterior + aspirado interior</p>
 <span>$80 MXN</span>
 </div>
 
 <div class="card-servicio" onclick="seleccionarServicio(this,'Detallado completo',150)">
-<h3>💎 Detallado completo</h3>
+<h3>Detallado completo</h3>
 <p>Limpieza profunda interior y exterior</p>
 <span>$150 MXN</span>
 </div>
