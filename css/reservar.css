@@ -1,4 +1,8 @@
-body,html{
+/* ==========================
+   RESET GENERAL
+========================== */
+
+body, html{
 height:100%;
 margin:0;
 padding:0;
@@ -9,17 +13,29 @@ display:flex;
 justify-content:center;
 }
 
+
+/* ==========================
+   CONTENEDOR PRINCIPAL
+========================== */
+
 .container{
 width:90%;
 max-width:420px;
 text-align:center;
 padding-top:40px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
-/* logo */
+
+/* ==========================
+   LOGO
+========================== */
 
 .logo-container{
-margin-bottom:20px;
+margin-bottom:25px;
+flex-shrink:0;
 }
 
 .circle{
@@ -31,21 +47,29 @@ display:flex;
 align-items:center;
 justify-content:center;
 margin:auto;
+box-shadow:0 10px 20px rgba(0,0,0,0.25);
 }
 
 .circle h1{
 color:#0f172a;
 font-size:2rem;
+font-weight:bold;
 }
 
-/* titulo */
+
+/* ==========================
+   TITULO
+========================== */
 
 .page-title{
 font-size:2rem;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
-/* recientes */
+
+/* ==========================
+   BUSQUEDAS RECIENTES
+========================== */
 
 .recientes-container{
 margin-bottom:30px;
@@ -70,7 +94,9 @@ color:white;
 padding:8px 16px;
 border-radius:20px;
 cursor:pointer;
-transition:.2s;
+font-weight:bold;
+transition:0.25s;
+box-shadow:0 4px 6px rgba(0,0,0,0.2);
 }
 
 .btn-reciente:hover{
@@ -78,20 +104,24 @@ background:#3b82f6;
 transform:translateY(-2px);
 }
 
-/* buscador */
+
+/* ==========================
+   BUSCADOR
+========================== */
 
 .buscador-container{
 display:flex;
 justify-content:center;
-margin-bottom:25px;
+margin-bottom:30px;
 }
 
 #buscador{
-padding:12px;
+padding:12px 15px;
 border:none;
 border-radius:25px 0 0 25px;
 width:200px;
 outline:none;
+font-size:1rem;
 }
 
 .btn-primary{
@@ -101,13 +131,17 @@ border:none;
 padding:12px 18px;
 border-radius:0 25px 25px 0;
 cursor:pointer;
+font-weight:bold;
 }
 
 .btn-primary:hover{
 background:#1d4ed8;
 }
 
-/* disponibilidad */
+
+/* ==========================
+   DISPONIBILIDAD
+========================== */
 
 .disponibilidad{
 margin:20px auto;
@@ -115,9 +149,13 @@ padding:12px;
 border-radius:10px;
 width:80%;
 font-weight:bold;
+min-height:24px;
 }
 
-/* horarios */
+
+/* ==========================
+   HORARIOS
+========================== */
 
 .horario-container{
 display:flex;
@@ -132,13 +170,21 @@ display:flex;
 flex-direction:column;
 }
 
+.horario-box label{
+margin-bottom:5px;
+font-weight:bold;
+}
+
 .horario-box input{
 padding:8px;
 border:none;
 border-radius:8px;
 }
 
-/* reservar */
+
+/* ==========================
+   BOTON RESERVAR
+========================== */
 
 .btn-reservar{
 background:#16a34a;
@@ -148,7 +194,8 @@ border-radius:25px;
 color:white;
 font-weight:bold;
 cursor:pointer;
-transition:.2s;
+transition:0.25s;
+box-shadow:0 4px 6px rgba(0,0,0,0.25);
 }
 
 .btn-reservar:hover{
@@ -156,7 +203,10 @@ background:#15803d;
 transform:translateY(-2px);
 }
 
-/* responsive */
+
+/* ==========================
+   RESPONSIVE
+========================== */
 
 @media(max-width:480px){
 
@@ -166,6 +216,11 @@ width:150px;
 
 .page-title{
 font-size:1.6rem;
+}
+
+.btn-reciente{
+padding:6px 14px;
+font-size:0.9rem;
 }
 
 }
