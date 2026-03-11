@@ -44,12 +44,12 @@
 
 </div>
 
-<!-- MODELO DEL AUTO -->
+<!-- PLACA DEL AUTO -->
 
-<div class="auto">
+<div class="placa">
 
-<label>Modelo del auto</label>
-<input type="text" id="modeloAuto" placeholder="Ej. Mazda 3, Jetta, Tesla...">
+<label>Placa del vehículo</label>
+<input type="text" id="placaAuto" placeholder="Ej. ABC-123-A">
 
 </div>
 
@@ -91,15 +91,15 @@ precioServicio=precio
 function reservarLavado(){
 
 const hora=document.getElementById("horaLavado").value
-const modelo=document.getElementById("modeloAuto").value
+const placa=document.getElementById("placaAuto").value
 
 if(servicioSeleccionado===""){
 alert("Selecciona un servicio")
 return
 }
 
-if(modelo===""){
-alert("Ingresa el modelo del auto")
+if(placa===""){
+alert("Ingresa la placa del vehículo")
 return
 }
 
@@ -111,7 +111,7 @@ return
 localStorage.setItem("servicioLavado",servicioSeleccionado)
 localStorage.setItem("precioLavado",precioServicio)
 localStorage.setItem("horaLavado",hora)
-localStorage.setItem("modeloAuto",modelo)
+localStorage.setItem("placaAuto",placa)
 
 window.location.href="pago_lavado.html"
 

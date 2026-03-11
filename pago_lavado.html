@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago Autolavado | MoviPark</title>
+<link rel="stylesheet" href="css/pago.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="circle">
+<h1>MoviPark</h1>
+</div>
+
+<h2>Confirmar pago</h2>
+
+<div class="resumen">
+
+<p><strong>Servicio:</strong> <span id="servicio"></span></p>
+
+<p><strong>Placa:</strong> <span id="placa"></span></p>
+
+<p><strong>Hora:</strong> <span id="hora"></span></p>
+
+<p><strong>Total:</strong> $<span id="precio"></span> MXN</p>
+
+</div>
+
+<input type="text" placeholder="Número de tarjeta">
+<input type="text" placeholder="MM/AA">
+<input type="text" placeholder="CVV">
+
+<button onclick="pagar()">Pagar ahora</button>
+
+</div>
+
+<script>
+
+document.getElementById("servicio").textContent =
+localStorage.getItem("servicioLavado")
+
+document.getElementById("placa").textContent =
+localStorage.getItem("placaAuto")
+
+document.getElementById("hora").textContent =
+localStorage.getItem("horaLavado")
+
+document.getElementById("precio").textContent =
+localStorage.getItem("precioLavado")
+
+function pagar(){
+
+alert("Pago realizado con éxito ")
+
+window.location.href="service.html"
+
+}
+
+</script>
+
+</body>
+</html>

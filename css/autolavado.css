@@ -1,7 +1,7 @@
 body{
 margin:0;
 font-family:Arial;
-background:#1e40af;
+background:#38bdf8;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -136,6 +136,22 @@ font-weight:bold;
 }
 
 .auto input{
+margin-top:8px;
+padding:10px;
+border-radius:8px;
+border:none;
+width:100%;
+}
+.placa{
+margin-bottom:20px;
+text-align:left;
+}
+
+.placa label{
+font-weight:bold;
+}
+
+.placa input{
 margin-top:8px;
 padding:10px;
 border-radius:8px;
