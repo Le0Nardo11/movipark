@@ -224,3 +224,25 @@ font-size:0.9rem;
 }
 
 }
+.loader{
+
+margin-top:15px;
+background:#2563eb;
+color:white;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+
+}
+.horario-container{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin-top:15px;
+}
+
+.horario-box{
+display:flex;
+flex-direction:column;
+flex:1;
+}

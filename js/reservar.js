@@ -1,28 +1,41 @@
 function buscarLugar() {
+    
     const input = document.getElementById("buscador").value;
     const mensaje = document.getElementById("disponibilidad");
     const btnReservar = document.getElementById("btnReservar");
     const horarioContainer = document.getElementById("horario-container");
+    const loader = document.getElementById("loader");
 
     if (input.trim() === "") {
         alert("Por favor ingresa un estacionamiento");
         return;
     }
 
-    // Disponibilidad aleatoria
-    const disponible = Math.random() < 0.5; // 50% de probabilidad
+    // Mostrar loader
+    loader.style.display = "block";
+    mensaje.style.display = "none";
 
-    if (disponible) {
-        mensaje.textContent = "Lugar disponible ✅";
-        mensaje.style.backgroundColor = "#16a34a"; // verde
-        horarioContainer.style.display = "flex"; // mostrar horarios
-        btnReservar.style.display = "inline-block"; // mostrar botón reservar
-    } else {
-        mensaje.textContent = "Estacionamiento lleno ❌";
-        mensaje.style.backgroundColor = "#dc2626"; // rojo
-        horarioContainer.style.display = "none"; // ocultar horarios
-        btnReservar.style.display = "none"; // ocultar botón
-    }
+    // Simular búsqueda (1 segundo)
+    setTimeout(() => {
+
+        loader.style.display = "none";
+        mensaje.style.display = "block";
+
+        const disponible = Math.random() < 0.5;
+
+        if (disponible) {
+            mensaje.textContent = "Lugar disponible ✅";
+            mensaje.style.backgroundColor = "#16a34a";
+            horarioContainer.style.display = "flex";
+            btnReservar.style.display = "inline-block";
+        } else {
+            mensaje.textContent = "Estacionamiento lleno ❌";
+            mensaje.style.backgroundColor = "#dc2626";
+            horarioContainer.style.display = "none";
+            btnReservar.style.display = "none";
+        }
+
+    }, 1000);
 }
 
 function reservar(){
