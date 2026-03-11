@@ -20,7 +20,7 @@
 
 <h2 class="titulo">Autolavado</h2>
 
-<!-- Tarjetas de servicio -->
+<!-- TARJETAS DE SERVICIO -->
 
 <div class="servicios">
 
@@ -44,17 +44,25 @@
 
 </div>
 
-<!-- Hora -->
+<!-- MODELO DEL AUTO -->
+
+<div class="auto">
+
+<label>Modelo del auto</label>
+<input type="text" id="modeloAuto" placeholder="Ej. Mazda 3, Jetta, Tesla...">
+
+</div>
+
+<!-- HORA DEL SERVICIO -->
 
 <div class="horario">
 
 <label>Selecciona hora del servicio</label>
-
 <input type="time" id="horaLavado">
 
 </div>
 
-<!-- Botón -->
+<!-- BOTON -->
 
 <button class="btn-reservar" onclick="reservarLavado()">
 Reservar lavado
@@ -83,9 +91,15 @@ precioServicio=precio
 function reservarLavado(){
 
 const hora=document.getElementById("horaLavado").value
+const modelo=document.getElementById("modeloAuto").value
 
 if(servicioSeleccionado===""){
 alert("Selecciona un servicio")
+return
+}
+
+if(modelo===""){
+alert("Ingresa el modelo del auto")
 return
 }
 
@@ -97,6 +111,7 @@ return
 localStorage.setItem("servicioLavado",servicioSeleccionado)
 localStorage.setItem("precioLavado",precioServicio)
 localStorage.setItem("horaLavado",hora)
+localStorage.setItem("modeloAuto",modelo)
 
 window.location.href="pago_lavado.html"
 
